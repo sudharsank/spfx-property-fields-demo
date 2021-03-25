@@ -1,6 +1,6 @@
 export interface IPropertyFieldsDemoProps {
     list: string;
-    column: string;
+    columnSingleTitle: string;
     columnTitle: string[];
     columnInternalName: string[];
 }
