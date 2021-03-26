@@ -13,9 +13,9 @@ export default class PropertyFieldsDemo extends React.Component<IPropertyFieldsD
                             <span className={styles.title}>Welcome to SharePoint!</span>
                             <p className={styles.subTitle}>Customize SharePoint experiences using Web Parts.</p>
                             <p className={styles.description}>Selected List: {this.props.list}</p>
-                            <p className={styles.description}>Single Column ID: {this.props.column}</p>
+                            <p className={styles.description}>Single Column ID: {this.props.columnSingleTitle}</p>
                             <p className={styles.description}>Single Column Title(s): {this.props.columnTitle}</p>
-                            <p className={styles.description}>Single Column Internal Name(s): {this.props.columnInternalName}</p>
+                            <p className={styles.description}>Multiple Column Internal Name(s): {this.props.columnInternalName}</p>
                             <a href="https://aka.ms/spfx" className={styles.button}>
                                 <span className={styles.label}>Learn more</span>
                             </a>

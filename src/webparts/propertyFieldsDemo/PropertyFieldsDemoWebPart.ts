@@ -14,8 +14,8 @@ import { IPropertyFieldsDemoProps } from './components/IPropertyFieldsDemoProps'
 
 export interface IPropertyFieldsDemoWebPartProps {
     list: string;
-    column: string;
-    columnTitle: string[];
+    columnSingleTitle: string;
+    columnMultipleID: string[];
     columnInternalName: string[];
 }
 
@@ -26,8 +26,8 @@ export default class PropertyFieldsDemoWebPart extends BaseClientSideWebPart<IPr
             PropertyFieldsDemo,
             {
                 list: this.properties.list,
-                column: this.properties.column,
-                columnTitle: this.properties.columnTitle,
+                columnSingleTitle: this.properties.columnSingleTitle,
+                columnTitle: this.properties.columnMultipleID,
                 columnInternalName: this.properties.columnInternalName
             }
         );
@@ -74,10 +74,10 @@ export default class PropertyFieldsDemoWebPart extends BaseClientSideWebPart<IPr
                         {
                             groupName: 'Single Column Selection',
                             groupFields: [
-                                PropertyFieldColumnPicker('column', {
+                                PropertyFieldColumnPicker('columnSingleTitle', {
                                     label: 'Select a single column',
                                     context: this.context,
-                                    selectedColumn: this.properties.column,
+                                    selectedColumn: this.properties.columnSingleTitle,
                                     listId: this.properties.list,
                                     disabled: false,
                                     orderBy: PropertyFieldColumnPickerOrderBy.Title,
@@ -85,19 +85,19 @@ export default class PropertyFieldsDemoWebPart extends BaseClientSideWebPart<IPr
                                     properties: this.properties,
                                     onGetErrorMessage: null,
                                     deferredValidationTime: 0,
-                                    key: 'columnPickerFieldId',
+                                    key: 'columnSingleTitlePickerFieldId',
                                     displayHiddenColumns: false,
-                                    columnReturnProperty: IColumnReturnProperty.Title
+                                    columnReturnProperty: IColumnReturnProperty.Id
                                 })
                             ]
                         },
                         {
                             groupName: 'MultiColumn Title Selection',
                             groupFields: [
-                                PropertyFieldColumnPicker('columnTitle', {
+                                PropertyFieldColumnPicker('columnMultipleID', {
                                     label: 'Select columns which will return title',
                                     context: this.context,
-                                    selectedColumn: this.properties.columnTitle,
+                                    selectedColumn: this.properties.columnMultipleID,
                                     listId: this.properties.list,
                                     disabled: false,
                                     orderBy: PropertyFieldColumnPickerOrderBy.Title,
